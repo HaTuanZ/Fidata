@@ -1,0 +1,9 @@
+{
+  "name": "Analysis",
+  "namespace": "Botble\\Analysis\\",
+  "provider": "Botble\\Analysis\\Providers\\AnalysisServiceProvider",
+  "author": "Hai Truong",
+  "url": "https://haitruongit.com",
+  "version": "5.8",
+  "description": "Analysis"
+}

@@ -1,0 +1,11 @@
+.scroll-to a {
+    display: block;
+}
+.affix {
+    width: 100%;
+    top: 60px;
+    position: fixed;
+    overflow: visible!important;
+    z-index: 9998;
+    margin: 0 auto;
+}

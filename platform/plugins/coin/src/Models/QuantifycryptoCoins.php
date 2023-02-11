@@ -1,0 +1,80 @@
+<?php
+
+namespace Botble\Coin\Models;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
+
+class QuantifycryptoCoins extends Eloquent
+{
+    protected $connection = 'mongodb';
+    protected $collection = 'quantifycrypto_coins';
+
+    protected $fillable = [
+        'coin_id',
+        "rank",
+        "coin_symbol",
+        "coin_name",
+        "atr_15min",
+        "atr_1h",
+        "atr_24h",
+        "atr_2h",
+        "atr_30min",
+        "atr_4h",
+        "atr_5min",
+        "bollinger_bands_lower_15min",
+        "bollinger_bands_lower_1h",
+        "bollinger_bands_lower_24h",
+        "bollinger_bands_lower_2h",
+        "bollinger_bands_lower_30min",
+        "bollinger_bands_lower_4h",
+        "bollinger_bands_lower_5min",
+        "bollinger_bands_upper_15min",
+        "bollinger_bands_upper_1h",
+        "bollinger_bands_upper_24h",
+        "bollinger_bands_upper_2h",
+        "bollinger_bands_upper_30min",
+        "bollinger_bands_upper_4h",
+        "bollinger_bands_upper_5min",
+        "coin_price",
+        "coin_price_btc",
+        "macd_hist_15min",
+        "macd_hist_1h",
+        "macd_hist_24h",
+        "macd_hist_2h",
+        "macd_hist_30min",
+        "macd_hist_4h",
+        "macd_hist_5min",
+        "macd_signal_15min",
+        "macd_signal_1h",
+        "macd_signal_24h",
+        "macd_signal_2h",
+        "macd_signal_30min",
+        "macd_signal_4h",
+        "macd_signal_5min",
+        "macd_value_15min",
+        "macd_value_1h",
+        "macd_value_24h",
+        "macd_value_2h",
+        "macd_value_30min",
+        "macd_value_4h",
+        "macd_value_5min",
+        "percent_change_14d",
+        "percent_change_15min",
+        "percent_change_1h",
+        "percent_change_1year",
+        "percent_change_24h",
+        "percent_change_2h",
+        "percent_change_30d",
+        "percent_change_4h",
+        "percent_change_5min",
+        "percent_change_7d",
+        "percent_change_ytd",
+        "rsi_15min",
+        "rsi_1h",
+        "rsi_24h",
+        "rsi_2h",
+        "rsi_30min",
+        "rsi_4h",
+        "rsi_5min"
+    ];
+
+}

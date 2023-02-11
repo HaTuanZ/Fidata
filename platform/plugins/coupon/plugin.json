@@ -1,0 +1,9 @@
+{
+    "name": "Coupon",
+    "namespace": "Botble\\Coupon\\",
+    "provider": "Botble\\Coupon\\Providers\\CouponServiceProvider",
+    "author": "Hai Truong",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module coupon"
+}

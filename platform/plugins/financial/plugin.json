@@ -1,0 +1,9 @@
+{
+    "name": "Financial",
+    "namespace": "Botble\\Financial\\",
+    "provider": "Botble\\Financial\\Providers\\FinancialServiceProvider",
+    "author": "Hai Truong IT",
+    "url": "https://haitruongit.com",
+    "version": "1.0",
+    "description": "The description for module financial"
+}

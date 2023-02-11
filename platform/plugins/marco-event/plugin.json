@@ -1,0 +1,9 @@
+{
+    "name": "Marco Event",
+    "namespace": "Botble\\MarcoEvent\\",
+    "provider": "Botble\\MarcoEvent\\Providers\\MarcoEventServiceProvider",
+    "author": "Hai Truong",
+    "url": "https://haitruongit.com",
+    "version": "5.27",
+    "description": "The description for module marco event"
+}

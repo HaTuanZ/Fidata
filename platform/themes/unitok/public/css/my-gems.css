@@ -1,0 +1,525 @@
+.account-my-gems {
+    padding-top: 70px;
+}
+.account-my-gems .container {
+    max-width: 1300px;
+}
+
+.account-links a {
+    display: block;
+    transition: all 0.3s ease 0s;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.account-links a span {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.account-links a svg {
+    width: 16px;
+    margin-right: 8px;
+}
+
+.account-links a:hover,
+.account-links a.active {
+    color: #6164ff;
+}
+
+.my-diamonds-container {
+    padding-top: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.my-rewards-container {
+    padding-top: 60px;
+    margin: 0 auto;
+}
+.my-diamonds {
+    width: 320px;
+    height: 180px;
+    position: relative;
+    margin-bottom: 37px;
+    background-color: var(--color1);
+    color: rgb(255, 255, 255);
+    background-size: 70%;
+    border-radius: 16px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    overflow: hidden;
+}
+
+.my-diamonds-box {
+    position: absolute;
+    left: 24px;
+    top: 12px;
+    z-index: 1;
+}
+
+.my-diamonds-box .text {
+    font-size: 12px;
+    margin: 0;
+}
+
+.my-diamonds-bg {
+    position: absolute;
+    right: 20px;
+    bottom: -8px;
+    pointer-events: none;
+}
+
+.tab-collect-diamonds {
+    padding: 30px 0;
+}
+
+.tab-collect-diamonds-heading {
+    display: flex;
+    align-items: center;
+}
+
+.tab-collect-diamonds-title {
+    flex-grow: 1;
+}
+
+.tab-collect-diamonds-range {
+    display: flex;
+    margin-top: 23px;
+    grid-area: 3 / 1 / 4 / 3;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.tab-collect-diamonds-range > * {
+    display: inline-flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 16px;
+    width: 128.86px;
+    min-width: 77px;
+    height: 128.86px;
+    background: #f8fafd;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #000;
+    margin: 4px;
+}
+
+.tab-collect-diamonds-range > *:first-child {
+    margin-left: 0;
+}
+
+.tab-collect-diamonds-range .next {
+    background: #222227;
+}
+
+.tab-collect-diamonds-range .day p {
+    margin: 0 auto;
+    position: relative;
+}
+
+.tab-collect-diamonds-range .day p:first-child {
+    font-size: 14px;
+    font-weight: 600;
+    color: #808a9d;
+    margin-bottom: 5px;
+}
+
+.tab-collect-diamonds-range .day.next p {
+    color: #fff;
+}
+
+.tab-collect-diamonds-range .day img {
+    width: 44px;
+}
+
+.tab-collect-diamonds-range .day img:nth-child(2) {
+    position: absolute;
+    width: 20px;
+    margin-left: -8px;
+    bottom: 2px;
+    animation: 0.2s cubic-bezier(0, 0, 0.6, 1.77) 0s 1 normal forwards running iGLmwX;
+}
+
+.tab-collect-diamonds-range .day p:last-child {
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 6px;
+}
+
+.tab-collect-diamonds-range .day:not(.next):hover {
+    background: var(--color1);
+}
+
+.tab-collect-diamonds-range .day:not(.next):hover > * {
+    color: #fff;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table td, .table th {
+    padding: 8px;
+}
+
+.table thead tr,
+.table tbody tr {
+    border-bottom: 1px solid #222227;
+}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: white;
+}
+
+.gems-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    margin-bottom: 30px;
+}
+
+.gems-list .gems-box {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: #222227;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    user-select: none;
+    cursor: pointer;
+    pointer-events: initial;
+    padding: 30px 10px 24px 10px;
+    color: #fff;
+    position: relative;
+}
+
+.gems-list .gems-box.featured {
+    background: #531DA2;
+}
+
+.gems-list .gems-box.selected,
+.gems-list .gems-box:hover {
+    background: var(--color1);
+    color: #fff;
+}
+
+.gems-box-number {
+    height: 32px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.gems-box-number svg {
+    width: 24px;
+}
+
+.gems-box-number span {
+    font-size: 1.375rem;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+
+.gems-box-text {
+    height: 20px;
+    margin-top: 8px;
+    display: flex;
+}
+
+.gems-badge-bonus {
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 99px;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomleft: 99px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 99px;
+    background: var(--color1);
+    color: #fff;
+    padding: 4px 10px 4px 16px;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.gems-text .icon {
+    position: relative;
+}
+
+.gems-text .icon svg {
+    width: 28px;
+    position: absolute;
+    top: -19px;
+    right: -21px;
+}
+
+@keyframes colorChange {
+    0%{fill:#A31B00}
+    50%{fill:#F49A9A}
+    100%{fill:#A31B00}
+}
+.colorChange {
+    animation: colorChange 0.5s infinite;
+}
+
+@media screen and (max-width: 769px) {
+    .gems-list {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .gems-list {
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+}
+
+.most-popular {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #FC3952;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    border-top-left-radius: 4px;
+}
+
+.gems-featured svg {
+    width: 12px;
+}
+
+.gems-action .total {
+    margin-bottom: 20px;
+}
+
+.pagination-container > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.pagination-container .page-item.active .page-link {
+    background-color: var(--color1);
+    border-color: var(--color1);
+}
+.pagination-container .page-item.active .page-link {
+    background-color: var(--color1);
+    border-color: var(--color1);
+}
+.pagination {
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    flex-flow: wrap;
+}
+.pagination li {
+    margin-bottom: 10px;
+}
+.page-link {
+    position: relative;
+    display: block;
+    font-size: .875rem;
+    line-height: 1.5;
+    margin: 0 5px;
+    padding: 3px 12px;
+    border: 0;
+    border-radius: 0!important;
+}
+.nk-refwg {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.nk-refwg-invite, .nk-refwg-stats { width: 100%; }
+
+.nk-refwg-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 1.5rem; }
+
+.nk-refwg-group { position: relative; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; padding-right: 30px; }
+
+.nk-refwg-name .title { font-size: 13px; color: #6576ff; }
+
+.nk-refwg-name .title .icon { color: #8094ae; font-size: 0.75rem; margin-left: 0.125rem; }
+
+.nk-refwg-info { flex-grow: 1; text-align: center; display: flex; justify-content: space-around; }
+
+.nk-refwg-info .title { font-size: 1.125rem; font-weight: 500; }
+
+.nk-refwg-more { position: absolute; right: -4px; top: -2px; }
+
+.nk-refwg .nk-refwg-invite { border-bottom: 1px solid #dbdfea; }
+
+.nk-refwg-ck { height: 50px; margin-top: 0.75rem; }
+
+@media (min-width: 768px) {
+    .nk-refwg .nk-refwg-invite {
+        width: 55%;
+        border-bottom: none;
+        border-right: 1px solid #dbdfea;
+    }
+    .dark .nk-refwg .nk-refwg-invite {
+        border-right: 1px solid #222227;
+    }
+    .nk-refwg .nk-refwg-stats {
+        width: 45%;
+    }
+}
+.form-control-wrap, .form-control-group {
+    position: relative;
+}
+.clipboard-init {
+    cursor: pointer;
+}
+.form-clip, .form-text-hint {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    height: calc(2.125rem - 2px);
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 0.75rem;
+    background: #fff;
+    border-radius: 4px;
+}
+.form-control.copy-text {
+    display: block;
+    width: 100%;
+    height: calc(2.125rem + 2px);
+    padding: 0.4375rem 1rem;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    background-clip: padding-box;
+    border: 1px solid #dbdfea;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-icon {
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: calc(1rem + 24px);
+    height: calc(2.125rem + 2px);
+}
+.form-icon + .form-control {
+    padding-left: calc(1rem + 24px);
+}
+.dark .form-control {
+    background-color: rgb(55 65 81/1);
+    border-color: rgb(75 85 99/1);
+}
+.dark .form-clip {
+    background-color: var(--color1);
+}
+.clipboard-text {
+    font-size: 12px;
+    padding-left: 5px;
+}
+.nk-refwg-stats .my-diamonds {
+    width: auto;
+    margin: 0;
+}
+
+.packages-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    margin-bottom: 30px;
+}
+
+.package-item {
+    /*box-shadow: rgb(136 136 136 / 50%) 0px 0px 20px 0px;*/
+    border: 1px solid rgb(61, 61, 61);
+    padding: 32px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.package-item .package-name {
+    text-align: center;
+    color: rgb(0, 81, 195);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 32px;
+    margin-bottom: 8px;
+}
+
+.package-item .package-description {
+    font-size: 0.875rem;
+    line-height: 22px;
+    color: #d9d9d9;
+    border-top: 1px solid rgb(49, 49, 49);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.package-item .package-price {
+    margin: 32px auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.package-item .package-price svg {
+    width: 32px;
+}
+
+.package-item .package-price span {
+    font-size: 2rem;
+    line-height: 40px;
+    font-weight: 600;
+    color: rgb(217, 217, 217);
+    padding-left: 5px;
+}
+
+.package-item .package-image {
+    margin: 0 auto;
+}
+
+.package-item .package-image img {
+    width: 100%;
+}
+
+.package-item .package-access {
+    color: rgb(153, 153, 153);
+    font-size: 1rem;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.package-item .package-purchase {
+    margin: 0 auto;
+    text-align: center;
+}

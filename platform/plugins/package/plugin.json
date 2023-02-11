@@ -1,0 +1,9 @@
+{
+    "name": "Package",
+    "namespace": "Botble\\Package\\",
+    "provider": "Botble\\Package\\Providers\\PackageServiceProvider",
+    "author": "Hai Truong",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module package"
+}

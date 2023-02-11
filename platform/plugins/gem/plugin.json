@@ -1,0 +1,9 @@
+{
+    "name": "Gem",
+    "namespace": "Botble\\Gem\\",
+    "provider": "Botble\\Gem\\Providers\\GemServiceProvider",
+    "author": "Hai Truong",
+    "url": "https://haitruonginfotech.com",
+    "version": "1.0",
+    "description": "The description for module gem"
+}
