@@ -53,7 +53,7 @@ class ApiKeysServiceProvider extends ServiceProvider
                 'priority'    => 5,
                 'parent_id'   => null,
                 'name'        => 'plugins/api-keys::api-keys.name',
-                'icon'        => 'fa fa-list',
+                'icon'        => 'fa fa-key',
                 'url'         => route('api-keys.index'),
                 'permissions' => ['api-keys.index'],
             ]);

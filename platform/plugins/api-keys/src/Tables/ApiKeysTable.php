@@ -55,6 +55,15 @@ class ApiKeysTable extends TableAbstract
                 }
                 return Html::link(route('api-keys.edit', $item->id), $item->name);
             })
+            ->editColumn('api_key', function ($item) {
+                return $item->api_key;
+            })
+            ->editColumn('api_key_secret', function ($item) {
+                return $item->api_key_secret;
+            })
+            ->editColumn('created_by', function ($item) {
+                return $item->createdBy ? $item->createdBy->name : null;
+            })
             ->editColumn('checkbox', function ($item) {
                 return $this->getCheckbox($item->id);
             })
@@ -77,13 +86,16 @@ class ApiKeysTable extends TableAbstract
     public function query()
     {
         $query = $this->repository->getModel()
+            ->with('createdBy')
             ->select([
-               'id',
-               'name',
-               'created_at',
-               'status',
-           ]);
-
+                'id',
+                'name',
+                'api_key',
+                'api_key_secret',
+                'user_id',
+                'created_at',
+                'status',
+            ]);
         return $this->applyScopes($query);
     }
 
@@ -99,6 +111,18 @@ class ApiKeysTable extends TableAbstract
             ],
             'name' => [
                 'title' => trans('core/base::tables.name'),
+                'class' => 'text-start',
+            ],
+            'api_key' => [
+                'title' => trans('core/base::tables.api_key'),
+                'class' => 'text-start',
+            ],
+            'api_key_secret' => [
+                'title' => trans('core/base::tables.api_key_secret'),
+                'class' => 'text-start',
+            ],
+            "created_by" => [
+                'title' => trans('core/base::tables.created_by'),
                 'class' => 'text-start',
             ],
             'created_at' => [

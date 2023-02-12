@@ -45,4 +45,6 @@ return [
     'show_hide_editor' => 'Ẩn/Hiện trình soạn thảo',
     'basic_info_title' => 'Thông tin cơ bản',
     'remove_file' => 'Xóa tập tin',
+    'api_key' => "Api key",
+    'api_key_secret' => "Api key secret",
 ];

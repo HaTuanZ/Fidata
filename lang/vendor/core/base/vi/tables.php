@@ -61,4 +61,7 @@ return [
     'confirm_delete_many_msg' => 'Bạn có chắc chắn muốn xóa những bản ghi này?',
     'submit' => 'Hoàn tất',
     'please_select_record' => 'Vui lòng chọn ít nhất 1 bản ghi để thực hiện hành động này!',
+    'created_by' => "Tạo bởi",
+    'api_key' => "Api key",
+    'api_key_secret' => "Api key secret",
 ];
