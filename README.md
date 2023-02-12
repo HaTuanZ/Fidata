@@ -23,6 +23,6 @@ php artisan make:migration <your_migration> --path=platform\plugins\<your_plugin
 ### make migration
 
 ```cmd
-php artisan make:migrate --path=platform\plugins\<your_plugin>\database\migrations
+php artisan migrate --path=platform\plugins\<your_plugin>\database\migrations
 ```
 
