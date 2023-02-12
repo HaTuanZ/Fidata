@@ -1,3 +1,8 @@
+## active api-keys plugin
+```cmd
+php artisan cms:plugin:activate api-keys
+```
+
 ## update role & permissions
 
 ```cmd
