@@ -20,7 +20,7 @@ php artisan cms:user:rebuild-permissions
 php artisan make:migration <your_migration> --path=platform\plugins\<your_plugin>\database\migrations
 ```
 
-### make migration
+### migrate
 
 ```cmd
 php artisan migrate --path=platform\plugins\<your_plugin>\database\migrations
