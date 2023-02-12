@@ -22,6 +22,9 @@ class ApiKeys extends BaseModel
      */
     protected $fillable = [
         'name',
+        'api_key',
+        'api_key_secret',
+        'user_id',
         'status',
     ];
 

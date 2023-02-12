@@ -14,6 +14,9 @@ return new class extends Migration {
         Schema::create('api_keys', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
+            $table->string('api_key', 255);
+            $table->string('api_key_secret', 255);
+	        $table->integer('user_id');
             $table->string('status', 60)->default('published');
             $table->timestamps();
         });
