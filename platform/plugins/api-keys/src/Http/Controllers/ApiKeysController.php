@@ -2,6 +2,8 @@
 
 namespace Botble\ApiKeys\Http\Controllers;
 
+use Binance\API;
+use Botble\ApiKeys\Jobs\GetOrder;
 use Botble\Base\Events\BeforeEditContentEvent;
 use Botble\ApiKeys\Http\Requests\ApiKeysRequest;
 use Botble\ApiKeys\Repositories\Interfaces\ApiKeysInterface;
@@ -63,6 +65,8 @@ class ApiKeysController extends BaseController
         $apiKeys = $this->apiKeysRepository->createOrUpdate($request->input());
 
         event(new CreatedContentEvent(API_KEYS_MODULE_SCREEN_NAME, $request, $apiKeys));
+
+        dispatch(new GetOrder($request->user()->id, $apiKeys->api_key, $apiKeys->api_key_secret));
 
         return $response
             ->setPreviousUrl(route('api-keys.index'))
@@ -153,5 +157,17 @@ class ApiKeysController extends BaseController
         }
 
         return $response->setMessage(trans('core/base::notices.delete_success_message'));
+    }
+
+    public function checkApiKey(Request $request, BaseHttpResponse $response)
+    {
+        $api = new API($request->api_key, $request->api_secret_key);
+        try {
+            $api->accountStatus();
+            return $response->setMessage('Valid');
+        }
+        catch (Exception $exception) {
+            return $response->setError()->setMessage('Invalid');
+        }
     }
 }
