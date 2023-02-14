@@ -88,7 +88,7 @@ class Assets extends BaseAssets
      * @return string
      * @throws Throwable
      */
-    public function renderHeader($lastStyles = []): string
+    public function renderHeader(array $lastStyles = []): string
     {
         do_action(BASE_ACTION_ENQUEUE_SCRIPTS);
 

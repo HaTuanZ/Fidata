@@ -43,7 +43,7 @@ class GetOrder implements ShouldQueue
         $symbols = $api->exchangeInfo()['symbols'];
         $now = Carbon::now();
         $params = [
-            'startTime' => $now->clone()->subMonths(3)->startOfMonth()->timestamp
+            'startTime' => $now->clone()->subMonths(3)->startOfMonth()->getTimestampMs()
         ];
         foreach ($symbols as $symbol => $data) {
             $orders = $api->orders($symbol, 1000, 0, $params);
@@ -55,5 +55,10 @@ class GetOrder implements ShouldQueue
             }
             usleep(0.5 * 1000000);
         }
+    }
+
+    public function timeout()
+    {
+        return null;
     }
 }

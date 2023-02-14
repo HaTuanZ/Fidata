@@ -4,6 +4,7 @@ namespace Botble\ApiKeys\Http\Controllers;
 
 use Binance\API;
 use Botble\ApiKeys\Jobs\GetOrder;
+use Botble\ApiKeys\Models\Orders;
 use Botble\Base\Events\BeforeEditContentEvent;
 use Botble\ApiKeys\Http\Requests\ApiKeysRequest;
 use Botble\ApiKeys\Repositories\Interfaces\ApiKeysInterface;
@@ -62,6 +63,10 @@ class ApiKeysController extends BaseController
      */
     public function store(ApiKeysRequest $request, BaseHttpResponse $response)
     {
+        if (!$this->isValidApiKey($request->api_key, $request->api_key_secret)) {
+            return $response->setError()->setMessage('Invalid Api Key');
+        }
+
         $apiKeys = $this->apiKeysRepository->createOrUpdate($request->input());
 
         event(new CreatedContentEvent(API_KEYS_MODULE_SCREEN_NAME, $request, $apiKeys));
@@ -99,6 +104,10 @@ class ApiKeysController extends BaseController
      */
     public function update($id, ApiKeysRequest $request, BaseHttpResponse $response)
     {
+        if (!$this->isValidApiKey($request->api_key, $request->api_key_secret)) {
+            return $response->setError()->setMessage('Invalid Api Key');
+        }
+
         $apiKeys = $this->apiKeysRepository->findOrFail($id);
 
         $apiKeys->fill($request->input());
@@ -106,6 +115,7 @@ class ApiKeysController extends BaseController
         $apiKeys = $this->apiKeysRepository->createOrUpdate($apiKeys);
 
         event(new UpdatedContentEvent(API_KEYS_MODULE_SCREEN_NAME, $request, $apiKeys));
+
 
         return $response
             ->setPreviousUrl(route('api-keys.index'))
@@ -124,6 +134,7 @@ class ApiKeysController extends BaseController
             $apiKeys = $this->apiKeysRepository->findOrFail($id);
 
             $this->apiKeysRepository->delete($apiKeys);
+            Orders::where('user_id', $request->user()->id)->delete();
 
             event(new DeletedContentEvent(API_KEYS_MODULE_SCREEN_NAME, $request, $apiKeys));
 
@@ -153,21 +164,22 @@ class ApiKeysController extends BaseController
         foreach ($ids as $id) {
             $apiKeys = $this->apiKeysRepository->findOrFail($id);
             $this->apiKeysRepository->delete($apiKeys);
+            Orders::where('user_id', $request->user()->id)->delete();
             event(new DeletedContentEvent(API_KEYS_MODULE_SCREEN_NAME, $request, $apiKeys));
         }
 
         return $response->setMessage(trans('core/base::notices.delete_success_message'));
     }
 
-    public function checkApiKey(Request $request, BaseHttpResponse $response)
+    private function isValidApiKey($apiKey, $apiKeySecret)
     {
-        $api = new API($request->api_key, $request->api_secret_key);
+        $api = new API($apiKey, $apiKeySecret);
         try {
             $api->accountStatus();
-            return $response->setMessage('Valid');
+            return true;
         }
         catch (Exception $exception) {
-            return $response->setError()->setMessage('Invalid');
+            return false;
         }
     }
 }
