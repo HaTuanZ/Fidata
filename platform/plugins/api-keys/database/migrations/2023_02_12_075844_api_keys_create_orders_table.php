@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('clientOrderId')->nullable();
             $table->decimal('price', 32, 8);
             $table->decimal('origQty', 32, 8)->nullable();
-            $table->decimal('executedQty', 16, 8)->nullable();
+            $table->decimal('executedQty', 32, 8)->nullable();
             $table->decimal('cummulativeQuoteQty', 32, 8)->nullable();
             $table->string('status')->nullable();
             $table->string('timeInForce')->nullable();

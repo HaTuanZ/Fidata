@@ -31,7 +31,7 @@ class ApiKeysServiceProvider extends ServiceProvider
             ->loadMigrations()
             ->loadAndPublishTranslations()
             ->loadAndPublishViews()
-            ->loadRoutes(['web']);
+            ->loadRoutes(['api', 'web']);
 
         if (defined('LANGUAGE_MODULE_SCREEN_NAME')) {
             if (defined('LANGUAGE_ADVANCED_MODULE_SCREEN_NAME')) {

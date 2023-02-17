@@ -13,8 +13,4 @@ Route::group(['namespace' => 'Botble\ApiKeys\Http\Controllers', 'middleware' => 
             ]);
         });
     });
-
-    Route::group(['prefix' => 'orders', 'middleware' => 'auth'], function () {
-        Route::get('', 'OrderController@index');
-    });
 });
